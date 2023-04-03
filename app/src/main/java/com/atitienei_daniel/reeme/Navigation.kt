@@ -64,7 +64,7 @@ fun Navigation(
     ) {
         AnimatedNavHost(
             navController = navController,
-            startDestination = Routes.REMINDERS
+            startDestination =
         ) {
             composable(route = Routes.REMINDERS) {
                 RemindersListScreen(onNavigate = {
