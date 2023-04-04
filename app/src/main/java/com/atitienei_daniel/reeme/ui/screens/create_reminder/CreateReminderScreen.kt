@@ -451,11 +451,15 @@ private fun setAlarm(
     intent.putExtra("id", remindersListSize + 1)
 
     val pendingIntent =
-        PendingIntent.getBroadcast(context, remindersListSize + 1, intent, FLAG_IMMUTABLE)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            PendingIntent.getBroadcast(context, remindersListSize + 1, intent, FLAG_IMMUTABLE)
+        } else {
+            TODO("VERSION.SDK_INT < M")
+        }
 
     val interval = when (repeat) {
         ReminderRepeatTypes.ONCE -> 0
-        ReminderRepeatTypes.TWICE -> AlarmManager.INTERVAL_HALF_DAY
+        ReminderRepeatTypes.TWICE -> AlarmManager.INTERVAL_DAY / 2
         ReminderRepeatTypes.THRICE -> AlarmManager.INTERVAL_DAY / 3
         ReminderRepeatTypes.FOURFOLD -> AlarmManager.INTERVAL_DAY / 4
        // ReminderRepeatTypes.YEARLY -> Constants.YEAR_IN_MILLISECONDS
