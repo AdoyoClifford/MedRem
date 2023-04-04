@@ -1,5 +1,6 @@
 package com.atitienei_daniel.reeme.data.receiver
 
+import android.app.AlarmManager
 import android.app.Notification
 import android.app.Notification.EXTRA_NOTIFICATION_ID
 import android.app.PendingIntent
@@ -9,6 +10,7 @@ import android.content.Context
 import android.content.Intent
 import android.media.RingtoneManager
 import android.net.Uri
+import android.os.Build
 import android.util.Log
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -52,6 +54,7 @@ class AlarmReceiver : BroadcastReceiver() {
         }
 
         val notification = NotificationCompat.Builder(context!!, "reminder")
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setSmallIcon(R.drawable.ic_notifications_active)
             .setContentTitle(title)
             .setContentText(description)
@@ -59,7 +62,9 @@ class AlarmReceiver : BroadcastReceiver() {
             .setSound(notificationSound)
             .setDefaults(Notification.DEFAULT_ALL)
             .setContentIntent(pending)
-            .setPriority(NotificationCompat.PRIORITY_HIGH)
+
+
+
 
         val notificationManager = NotificationManagerCompat.from(context)
 

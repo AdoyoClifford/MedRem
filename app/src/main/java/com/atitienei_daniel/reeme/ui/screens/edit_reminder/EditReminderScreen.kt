@@ -5,6 +5,7 @@ import android.app.PendingIntent
 import android.app.PendingIntent.FLAG_IMMUTABLE
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.compose.animation.Crossfade
@@ -373,11 +374,15 @@ private fun editAlarm(
     intent.putExtra("id", id)
 
     val pendingIntent =
-        PendingIntent.getBroadcast(context, id, intent, FLAG_IMMUTABLE)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            PendingIntent.getBroadcast(context, id, intent, FLAG_IMMUTABLE)
+        } else {
+            TODO("VERSION.SDK_INT < M")
+        }
 
     val interval = when (repeat) {
         ReminderRepeatTypes.ONCE -> 0
-        ReminderRepeatTypes.TWICE -> AlarmManager.INTERVAL_HALF_DAY
+        ReminderRepeatTypes.TWICE -> AlarmManager.INTERVAL_DAY / 2
         ReminderRepeatTypes.THRICE -> AlarmManager.INTERVAL_DAY / 3
         ReminderRepeatTypes.FOURFOLD -> AlarmManager.INTERVAL_DAY / 4
        // ReminderRepeatTypes.YEARLY -> Constants.YEAR_IN_MILLISECONDS
