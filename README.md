@@ -1,33 +1,105 @@
-# Reeme
+<div align="center">
 
-![Kotlin](https://img.shields.io/badge/kotlin-%230095D5.svg?style=for-the-badge&logo=kotlin&logoColor=white)
-![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
-![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=android-studio&logoColor=white)
+# 💊 MedRem
 
-Is a reminder application.
+**A medication reminder Android app that helps you never miss a dose**
 
-## Tech Stack
+[![Kotlin](https://img.shields.io/badge/Kotlin-100%25-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)](https://kotlinlang.org/)
+[![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://developer.android.com/)
+[![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white)](https://developer.android.com/jetpack/compose)
+[![Stars](https://img.shields.io/github/stars/AdoyoClifford/MedRem?style=for-the-badge&color=167638)](https://github.com/AdoyoClifford/MedRem/stargazers)
 
-* MVVM Architecture
-* Kotlin
-* Jetpack Compose
-* Material Design 2
-* Dagger Hilt 
-* Coroutines
-* Flow
-* Notifications
-* Navigation
-* AndroidX
-* SqlDelight
+</div>
 
-## Screens
-![Screenshot_2022-06-30-12-05-26-02_35aafdd6c38b496dd9667bf9b0b8b7fe](https://user-images.githubusercontent.com/62098466/176639267-70fd2610-cd24-40c4-adb8-f5f84753a170.jpg)
-![Screenshot_2022-06-30-12-05-31-13_35aafdd6c38b496dd9667bf9b0b8b7fe](https://user-images.githubusercontent.com/62098466/176639269-91440470-6e47-48de-b7f5-9dd0f4098e25.jpg)
-![Screenshot_2022-06-30-12-05-38-15_35aafdd6c38b496dd9667bf9b0b8b7fe](https://user-images.githubusercontent.com/62098466/176639271-c12d5999-0120-44fb-abae-e250e0ab5685.jpg)
+---
 
-## Did you find this repository helpful?
-Don't forget give a star.
+## 📖 About
 
-## Didn't you?
-Then fork this repo, make it better and don't forgot give a STAR.
+MedRem is a medication reminder application built with modern Android development practices. It helps users track their medications, set reminders, and ensure they never miss a dose. The app features a clean UI built entirely with Jetpack Compose and follows the MVVM architecture pattern.
+
+## ✨ Features
+
+- 🔔 **Smart Notifications** — Timely medication reminders with local notifications
+- 💾 **Persistent Storage** — Medication data stored locally using SqlDelight
+- 🎨 **Material Design** — Clean, intuitive UI following Material Design 2 guidelines
+- 🏗️ **Modern Architecture** — Built with MVVM pattern for clean separation of concerns
+- 💉 **Dependency Injection** — Dagger Hilt for scalable dependency management
+- ⚡ **Reactive Streams** — Kotlin Coroutines & Flow for asynchronous data handling
+- 🧭 **Navigation** — Jetpack Navigation for seamless screen transitions
+
+## 🛠️ Tech Stack
+
+| Category | Technology |
+|---|---|
+| **Language** | Kotlin |
+| **UI Framework** | Jetpack Compose |
+| **Architecture** | MVVM |
+| **DI** | Dagger Hilt |
+| **Database** | SqlDelight |
+| **Async** | Coroutines & Flow |
+| **Navigation** | Jetpack Navigation |
+| **Design** | Material Design 2 |
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Android Studio Hedgehog or later
+- JDK 17+
+- Android SDK 24+ (minimum)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/AdoyoClifford/MedRem.git
+   ```
+
+2. **Open in Android Studio**
+   ```
+   File → Open → Select the MedRem directory
+   ```
+
+3. **Build & Run**
+   ```
+   Click the ▶️ Run button or press Shift+F10
+   ```
+
+## 📁 Project Structure
+
+```
+MedRem/
+├── app/
+│   ├── src/main/
+│   │   ├── java/com/adoyo/medrem/
+│   │   │   ├── data/          # Data layer (database, repositories)
+│   │   │   ├── di/            # Dependency injection modules
+│   │   │   ├── domain/        # Domain models and use cases
+│   │   │   ├── presentation/  # UI screens and ViewModels
+│   │   │   └── utils/         # Utility classes
+│   │   └── res/               # Resources (drawables, strings, etc.)
+│   └── build.gradle
+├── build.gradle
+└── settings.gradle
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## ⭐ Support
+
+If you found this project helpful, please give it a star! It helps others discover the project.
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
 
