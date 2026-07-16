@@ -13,3 +13,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Signing keys and credentials — never commit
+*.pepk
+*.jks
+*.keystore
+keystore.properties
